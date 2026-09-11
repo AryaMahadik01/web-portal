@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Services | NexusCore</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header id="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('index') }}" class="logo"><i class="fa-solid fa-cube"></i> NexusCore</a>
+            <nav class="nav-links">
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('about') }}">About</a>
+                <a href="{{ url_for('services') }}">Services</a>
+                <a href="{{ url_for('hr') }}">HR & Careers</a>
+                <a href="{{ url_for('contact') }}" class="cta-nav">Contact Us</a>
+            </nav>
+            <div class="hamburger"><i class="fa-solid fa-bars"></i></div>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Explore Our Solutions Portfolio</h1>
+            <p>Deep dive into our technology stacks, service tiers, and deployment lifecycles.</p>
+        </div>
+    </div>
+
+    <section class="services-section" style="padding-top: 40px;">
+        <div class="container">
+            <div class="services-grid">
+                <div class="service-box">
+                    <i class="fa-solid fa-server"></i>
+                    <h3>Tier 1: Cloud Infrastructure</h3>
+                    <p>Scalable cloud migrations, AWS/Azure server management, and automated containerized scaling pipelines.</p>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> 99.99% SLA Guaranteed Uptime</li>
+                        <li><i class="fa-solid fa-check"></i> Real-time Load Balancing</li>
+                    </ul>
+                </div>
+                <div class="service-box">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <h3>Tier 2: Full-Stack Engineering</h3>
+                    <p>Custom web portals, API gateway integration, and high-frequency data processing applications.</p>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> Python Flask & React Ecosystems</li>
+                        <li><i class="fa-solid fa-check"></i> Secure End-to-End Encryption</li>
+                    </ul>
+                </div>
+                <div class="service-box">
+                    <i class="fa-solid fa-headset"></i>
+                    <h3>Tier 3: 24/7 Managed Support</h3>
+                    <p>Dedicated round-the-clock engineering team handling incident response, patching, and performance audits.</p>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> 15-Minute Critical Response Time</li>
+                        <li><i class="fa-solid fa-check"></i> Monthly Security Audits</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 4rem;">
+                <a href="{{ url_for('contact') }}" class="btn btn-primary">Schedule a Technical Consultation <i class="fa-solid fa-calendar"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="{{ url_for('index') }}" class="logo"><i class="fa-solid fa-cube"></i> NexusCore</a>
+                <p>Empowering global enterprises with high-performance tech solutions.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Navigation</h4>
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('services') }}">Services</a>
+            </div>
+            <div class="footer-social">
+                <h4>Connect</h4>
+                <div class="social-icons"><a href="#"><i class="fa-brands fa-linkedin"></i></a></div>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 NexusCore Enterprise. All rights reserved.</p></div>
+    </footer>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

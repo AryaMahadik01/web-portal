@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | NexusCore</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header id="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('index') }}" class="logo"><i class="fa-solid fa-cube"></i> NexusCore</a>
+            <nav class="nav-links">
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('about') }}" class="active">About</a>
+                <a href="{{ url_for('services') }}">Services</a>
+                <a href="{{ url_for('hr') }}">HR & Careers</a>
+                <a href="{{ url_for('contact') }}" class="cta-nav">Contact Us</a>
+            </nav>
+            <div class="hamburger"><i class="fa-solid fa-bars"></i></div>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>About NexusCore</h1>
+            <p>Driven by innovation, built on trust and architectural excellence.</p>
+        </div>
+    </div>
+
+    <section class="about-section" style="padding-top: 40px;">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-card">
+                    <i class="fa-solid fa-bullseye"></i>
+                    <h3>Our Mission</h3>
+                    <p>To bridge the gap between complex enterprise operations and seamless user experiences through cutting-edge digital architecture.</p>
+                </div>
+                <div class="about-card">
+                    <i class="fa-solid fa-eye"></i>
+                    <h3>Our Vision</h3>
+                    <p>To become the global standard for agile enterprise web infrastructure and premier corporate workflow solutions.</p>
+                </div>
+                <div class="about-card">
+                    <i class="fa-solid fa-handshake"></i>
+                    <h3>Core Values</h3>
+                    <p>Absolute transparency, unwavering engineering precision, and a relentless focus on client success and scalable growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="{{ url_for('index') }}" class="logo"><i class="fa-solid fa-cube"></i> NexusCore</a>
+                <p>Empowering global enterprises with high-performance tech solutions.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Navigation</h4>
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('about') }}">About Us</a>
+                <a href="{{ url_for('services') }}">Services</a>
+            </div>
+            <div class="footer-social">
+                <h4>Connect</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 NexusCore Enterprise. All rights reserved.</p></div>
+    </footer>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

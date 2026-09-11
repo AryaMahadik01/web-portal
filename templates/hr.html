@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR & Careers | NexusCore</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header id="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('index') }}" class="logo"><i class="fa-solid fa-cube"></i> NexusCore</a>
+            <nav class="nav-links">
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('about') }}">About</a>
+                <a href="{{ url_for('services') }}">Services</a>
+                <a href="{{ url_for('hr') }}" class="active">HR & Careers</a>
+                <a href="{{ url_for('contact') }}" class="cta-nav">Contact Us</a>
+            </nav>
+            <div class="hamburger"><i class="fa-solid fa-bars"></i></div>
+        </div>
+    </header>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-container">
+                {% for category, message in messages %}
+                    <div class="flash-message {{ category }}"><i class="fa-solid fa-circle-check"></i> {{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <div class="page-header">
+        <div class="container">
+            <h1>HR & Career Opportunities</h1>
+            <p>Join a world-class team of engineers, designers, and strategists building the future.</p>
+        </div>
+    </div>
+
+    <section class="hr-section" style="padding-top: 40px;">
+        <div class="container">
+            <div class="hr-content-wrapper">
+                <div class="job-listings">
+                    <h3>Open Positions</h3>
+                    <div class="job-card">
+                        <div class="job-info">
+                            <h4>Senior Full-Stack Developer</h4>
+                            <span><i class="fa-solid fa-location-dot"></i> Remote / Hybrid</span>
+                        </div>
+                        <button class="apply-btn" onclick="populatePosition('Senior Full-Stack Developer')">Apply Now</button>
+                    </div>
+                    <div class="job-card">
+                        <div class="job-info">
+                            <h4>UI/UX Design Lead</h4>
+                            <span><i class="fa-solid fa-location-dot"></i> New York / Remote</span>
+                        </div>
+                        <button class="apply-btn" onclick="populatePosition('UI/UX Design Lead')">Apply Now</button>
+                    </div>
+                    <div class="job-card">
+                        <div class="job-info">
+                            <h4>Enterprise HR Specialist</h4>
+                            <span><i class="fa-solid fa-location-dot"></i> Remote</span>
+                        </div>
+                        <button class="apply-btn" onclick="populatePosition('Enterprise HR Specialist')">Apply Now</button>
+                    </div>
+                </div>
+
+                <div class="hr-form-box">
+                    <h3>Submit Application</h3>
+                    <form action="{{ url_for('hr') }}" method="POST">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" name="applicant_name" required placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" name="applicant_email" required placeholder="Enter your email">
+                        </div>
+                        <div class="form-group">
+                            <label>Target Position</label>
+                            <input type="text" id="selected-position" name="position" required value="Senior Full-Stack Developer" placeholder="Select position from left">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Submit Application</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="{{ url_for('index') }}" class="logo"><i class="fa-solid fa-cube"></i> NexusCore</a>
+                <p>Empowering global enterprises with high-performance tech solutions.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Navigation</h4>
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('hr') }}">Careers</a>
+            </div>
+            <div class="footer-social">
+                <h4>Connect</h4>
+                <div class="social-icons"><a href="#"><i class="fa-brands fa-linkedin"></i></a></div>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 NexusCore Enterprise. All rights reserved.</p></div>
+    </footer>
+    <script>
+        function populatePosition(title) {
+            document.getElementById('selected-position').value = title;
+        }
+    </script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

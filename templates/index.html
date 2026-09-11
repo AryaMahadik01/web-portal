@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusCore | Enterprise Solutions & Careers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header id="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('index') }}" class="logo"><i class="fa-solid fa-cube"></i> Amit Mahadik</a>
+            <nav class="nav-links">
+                <a href="{{ url_for('index') }}" class="active">Home</a>
+                <a href="{{ url_for('about') }}">About</a>
+                <a href="{{ url_for('services') }}">Services</a>
+                <a href="{{ url_for('hr') }}">HR & Careers</a>
+                <a href="{{ url_for('contact') }}" class="cta-nav">Contact Us</a>
+            </nav>
+            <div class="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-container">
+                {% for category, message in messages %}
+                    <div class="flash-message {{ category }}">
+                        <i class="fa-solid fa-circle-check"></i> {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <span class="badge">Next-Gen Enterprise Solutions</span>
+            <h1>Empowering Businesses for the Digital Future</h1>
+            <p>We deliver high-performance, scalable web ecosystems and strategic operational frameworks designed to accelerate growth and maximize efficiency.</p>
+            <div class="hero-btns">
+                <a href="{{ url_for('explore_services') }}" class="btn btn-primary">Explore Services <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="{{ url_for('contact') }}" class="btn btn-outline">Get in Touch</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80" alt="Enterprise Workspace">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="{{ url_for('index') }}" class="logo"><i class="fa-solid fa-cube"></i> NexusCore</a>
+                <p>Empowering global enterprises with high-performance tech solutions and elite workforce matching.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Navigation</h4>
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('about') }}">About Us</a>
+                <a href="{{ url_for('services') }}">Services</a>
+                <a href="{{ url_for('hr') }}">Careers</a>
+                <a href="{{ url_for('contact') }}">Contact</a>
+            </div>
+            <div class="footer-social">
+                <h4>Connect With Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NexusCore Enterprise. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
